@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My ApplicationIT226AndroidApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="alarm_clock">Alarm Clock</string>
+    <string name="timer">Timer</string>
+    <string name="alarm">Alarm</string>
+    <string name="what_would_you_like_to_set">What would you like to set?</string>
+    <string name="welcome_to_your_android_alarm">Welcome to your android alarm!</string>
+    <string name="title_activity_date">dateActivity</string>
+    <string name="title_activity_clock">clockActivity</string>
+    <string name="title_activity_timer">timerActivity</string>
+</resources>
