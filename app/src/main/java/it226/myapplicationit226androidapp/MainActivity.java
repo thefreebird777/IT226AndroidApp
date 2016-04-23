@@ -1,5 +1,6 @@
 package it226.myapplicationit226androidapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    Button button1;
+    Button button2;
+    Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +23,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -48,5 +45,48 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void alarmOnClick(View v){
+       button1 = (Button)findViewById(R.id.button1);
+       button1.setOnClickListener(this);
+    }
+
+    public void timerOnClick(View v){
+        button2 = (Button)findViewById(R.id.button2);
+        button2.setOnClickListener(this);
+    }
+
+
+    public void locationOnClick(View v){
+        button3 = (Button)findViewById(R.id.button3);
+        button3.setOnClickListener(this);
+    }
+
+    private void button1Click(){
+        startActivity(new Intent("cp3.tutorials.dateActivity"));
+    }
+
+    private void button2Click(){
+        startActivity(new Intent("cp3.tutorials.timerActivity"));
+    }
+    private void button3Click(){
+        startActivity(new Intent("cp3.tutorials.locationActivity"));
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button1:
+                button1Click();
+                break;
+            case R.id.button2:
+                button2Click();
+                break;
+            case R.id.button3:
+                button3Click();
+                break;
+        }
     }
 }

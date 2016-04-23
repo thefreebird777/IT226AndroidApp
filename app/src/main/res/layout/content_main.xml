@@ -12,25 +12,6 @@
     tools:context="it226.myapplicationit226androidapp.MainActivity"
     android:background="@color/material_grey_850">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/alarm"
-        android:id="@+id/button"
-        android:layout_marginTop="198dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/timer"
-        android:id="@+id/button2"
-        android:layout_marginTop="95dp"
-        android:layout_below="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,5 +33,36 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
         android:textColor="@color/accent_material_dark" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarm"
+        android:id="@+id/button1"
+        android:layout_marginTop="198dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="alarmOnClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer"
+        android:id="@+id/button2"
+        android:layout_marginTop="41dp"
+        android:onClick="timerOnClick"
+        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignStart="@+id/button1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_alarm"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:onClick="locationOnClick" />
 
 </RelativeLayout>

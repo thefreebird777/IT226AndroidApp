@@ -26,6 +26,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
+            <intent-filter>
+                <action android:name="cp3.tutorials.dateActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".clockActivity"
@@ -35,6 +39,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
+            <intent-filter>
+                <action android:name="cp3.tutorials.clockActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".timerActivity"
@@ -44,6 +52,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
+            <intent-filter>
+                <action android:name="cp3.tutorials.timerActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
