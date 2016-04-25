@@ -13,6 +13,14 @@ public class Logic {
     }
 
     public void message(String message){
-        System.out.print(message);
+
+    }
+
+    public void timer(int hours, int minutes){
+
+    }
+
+    public void locationTime(int minutes){
+
     }
 }

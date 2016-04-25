@@ -16,6 +16,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +31,6 @@
 
             <intent-filter>
                 <action android:name="cp3.tutorials.dateActivity" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -45,6 +45,7 @@
 
             <intent-filter>
                 <action android:name="cp3.tutorials.clockActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -59,6 +60,7 @@
 
             <intent-filter>
                 <action android:name="cp3.tutorials.timerActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -70,8 +72,19 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
+
             <intent-filter>
                 <action android:name="cp3.tutorials.messageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".locationActivity"
+            android:label="@string/title_activity_location"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="cp3.tutorials.locationActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
