@@ -31,7 +31,8 @@
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="83dp"
-        android:inputType="textShortMessage" />
+        android:inputType="textShortMessage"
+        android:editable="false" />
 
     <Button
         android:layout_width="wrap_content"

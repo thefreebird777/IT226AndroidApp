@@ -13,6 +13,6 @@ public class Logic {
     }
 
     public void message(String message){
-
+        System.out.print(message);
     }
 }

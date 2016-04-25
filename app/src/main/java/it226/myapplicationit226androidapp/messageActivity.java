@@ -9,7 +9,7 @@ import android.widget.EditText;
 public class messageActivity extends AppCompatActivity {
     EditText editText;
     Button button;
-    Logic logic;
+    Logic logic = new Logic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class messageActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         button = (Button) findViewById(R.id.button6);
 
+
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -26,7 +27,5 @@ public class messageActivity extends AppCompatActivity {
                 logic.message(editText.getText().toString());
             }
         });
-
     }
-
 }
