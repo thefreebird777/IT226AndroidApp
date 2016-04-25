@@ -2,8 +2,6 @@ package it226.myapplicationit226androidapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,8 +19,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -66,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void button1Click(){
         startActivity(new Intent("cp3.tutorials.dateActivity"));
     }
-
     private void button2Click(){
         startActivity(new Intent("cp3.tutorials.timerActivity"));
     }

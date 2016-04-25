@@ -10,4 +10,13 @@
     <string name="title_activity_clock">clockActivity</string>
     <string name="title_activity_timer">timerActivity</string>
     <string name="location_alarm">Location Alarm</string>
+    <string name="next">Next</string>
+    <string name="title_activity_message">messageActivity</string>
+    <string name="please_enter_your_message">Please enter your message:</string>
+    <string name="next2">Next</string>
+    <string name="select_the_timer_length">Select the timer length:</string>
+    <string name="hours">Hours:</string>
+    <string name="minutes">Minutes:</string>
+    <string name="next3">Next</string>
+    <string name="done">Done</string>
 </resources>

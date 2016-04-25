@@ -12,11 +12,78 @@
     tools:context="it226.myapplicationit226androidapp.timerActivity"
     android:background="@color/material_grey_850">
 
-    <Chronometer
+    <NumberPicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
+        android:id="@+id/numberPicker"
+        android:layout_alignTop="@+id/numberPicker4"
+        android:layout_toRightOf="@+id/numberPicker3"
+        android:layout_toEndOf="@+id/numberPicker3" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker2"
+        android:layout_alignTop="@+id/numberPicker4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker3"
+        android:layout_alignTop="@+id/numberPicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberPicker4"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/numberPicker2"
+        android:layout_toStartOf="@+id/numberPicker2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/select_the_timer_length"
+        android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp" />
+        android:textColor="@color/accent_material_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/hours"
+        android:id="@+id/textView5"
+        android:layout_above="@+id/numberPicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="47dp"
+        android:textColor="@color/accent_material_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/minutes"
+        android:id="@+id/textView6"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignLeft="@+id/numberPicker4"
+        android:layout_alignStart="@+id/numberPicker4"
+        android:textColor="@color/accent_material_dark" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next3"
+        android:id="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp" />
+
 </RelativeLayout>

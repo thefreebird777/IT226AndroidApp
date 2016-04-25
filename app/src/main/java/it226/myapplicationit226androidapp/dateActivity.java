@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 
 public class dateActivity extends AppCompatActivity {
 
     DatePicker datePicker;
+    Logic logic;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +19,18 @@ public class dateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_date);
 
         datePicker = (DatePicker) findViewById(R.id.datePicker);
+        button = (Button) findViewById(R.id.button);
+
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //use this method to set date
+                logic.date(datePicker.getDayOfMonth(), datePicker.getMonth());
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent("cp3.tutorials.clockActivity"));
             }
         });
