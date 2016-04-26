@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="it226.myapplicationit226androidapp.MainActivity"
-    android:background="@color/material_grey_850">
+    android:background="@android:color/darker_gray">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
         android:layout_marginTop="43dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/accent_material_dark" />
+        android:textColor="@color/abc_search_url_text_pressed" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
-        android:textColor="@color/accent_material_dark" />
+        android:textColor="@color/abc_search_url_text_pressed" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
         android:layout_marginTop="198dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:onClick="alarmOnClick" />
+        android:onClick="onClick" />
 
     <Button
         android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
         android:text="@string/timer"
         android:id="@+id/button2"
         android:layout_marginTop="41dp"
-        android:onClick="timerOnClick"
+        android:onClick="onClick"
         android:layout_below="@+id/button1"
         android:layout_alignLeft="@+id/button1"
         android:layout_alignStart="@+id/button1" />
@@ -63,6 +63,6 @@
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
-        android:onClick="locationOnClick" />
+        android:onClick="onClick" />
 
 </RelativeLayout>

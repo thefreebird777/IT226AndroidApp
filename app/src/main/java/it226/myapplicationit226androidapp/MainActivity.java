@@ -42,22 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    public void alarmOnClick(View v){
-       button1 = (Button)findViewById(R.id.button1);
-       button1.setOnClickListener(this);
-    }
-
-    public void timerOnClick(View v){
-        button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(this);
-    }
-
-
-    public void locationOnClick(View v){
-        button3 = (Button)findViewById(R.id.button3);
-        button3.setOnClickListener(this);
-    }
-
     private void button1Click(){
         startActivity(new Intent("cp3.tutorials.dateActivity"));
     }

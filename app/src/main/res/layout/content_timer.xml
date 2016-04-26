@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="it226.myapplicationit226androidapp.timerActivity"
-    android:background="@color/material_grey_850">
+    android:background="@android:color/darker_gray">
 
     <NumberPicker
         android:layout_width="wrap_content"
@@ -18,7 +18,8 @@
         android:id="@+id/numberPicker"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/button5"
-        android:layout_toStartOf="@+id/button5" />
+        android:layout_toStartOf="@+id/button5"
+        android:solidColor="@color/background_floating_material_light" />
 
     <NumberPicker
         android:layout_width="wrap_content"
@@ -26,7 +27,8 @@
         android:id="@+id/numberPicker2"
         android:layout_alignTop="@+id/numberPicker"
         android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+        android:layout_alignEnd="@+id/textView4"
+        android:solidColor="@color/background_floating_material_light" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +38,7 @@
         android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/accent_material_dark" />
+        android:textColor="@color/abc_search_url_text_pressed" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +47,7 @@
         android:text="@string/hours"
         android:id="@+id/textView5"
         android:layout_marginBottom="47dp"
-        android:textColor="@color/accent_material_dark"
+        android:textColor="@color/abc_search_url_text_pressed"
         android:layout_above="@+id/numberPicker"
         android:layout_toLeftOf="@+id/button5"
         android:layout_toStartOf="@+id/button5" />
@@ -56,10 +58,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/minutes"
         android:id="@+id/textView6"
-        android:textColor="@color/accent_material_dark"
+        android:textColor="@color/abc_search_url_text_pressed"
         android:layout_alignTop="@+id/textView5"
         android:layout_toRightOf="@+id/button5"
-        android:layout_toEndOf="@+id/button5" />
+        android:layout_toEndOf="@+id/button5"
+        android:autoText="false" />
 
     <Button
         android:layout_width="wrap_content"

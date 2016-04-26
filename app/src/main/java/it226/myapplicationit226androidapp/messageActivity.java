@@ -1,5 +1,6 @@
 package it226.myapplicationit226androidapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,6 +26,9 @@ public class messageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logic.message(editText.getText().toString());
+                Intent intent = new Intent(messageActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
