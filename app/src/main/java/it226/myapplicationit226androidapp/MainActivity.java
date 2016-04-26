@@ -6,13 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    Button button1;
-    Button button2;
-    Button button3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
