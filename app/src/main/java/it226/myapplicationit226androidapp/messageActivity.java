@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -19,10 +20,13 @@ public class messageActivity extends AppCompatActivity {
     //Logic logic = new Logic();
     String receiverFlag;
     PendingIntent pending_intent;
+    PendingIntent pending_intent2;
     AlarmManager alarm_manager;
     Context context;
     Boolean recursiveBool;
-
+    static Double lat;
+    static Double lon;
+    GPSTracker gps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +44,30 @@ public class messageActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //SET RECEIVER FLAG TO AUTO GENERATE
+                gps= new GPSTracker(messageActivity.this);
 
+                if(gps.canGetLocation()){
+                    lat= gps.getLat();
+                    lon= gps.getLong();
+                    //Toast.makeText(getApplicationContext(),"Your location is -\nLat: "+lat+"\nLong: "+lon,Toast.LENGTH_LONG).show();
+                }
+                else{
+                    gps.showSettingsAlert();
+                }
                 //creates unique id per intent
                 int id= (int)System.currentTimeMillis();
                 Intent temp = getIntent();
+
                 receiverFlag=temp.getStringExtra("Activity");
                 pending_intent = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                pending_intent2 = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 if(receiverFlag.equals("Timer")){
                     int minuteMil=timerActivity.getMinute()*60*1000;
                     int hourMil=timerActivity.getHour()*60*1000*60;
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+hourMil+minuteMil,pending_intent);
                 }
                 else if(receiverFlag.equals("Location")){
-                    alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
+                    alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),1000*60*locationActivity.getNum(),pending_intent2);
                 }
                 else if(receiverFlag.equals("Alarm Clock")) {
                     recursiveBool = recursiveActivity.getRecursive();
@@ -118,5 +133,13 @@ public class messageActivity extends AppCompatActivity {
     public static String getMes(){
         return editText.getText().toString();
     }
+
+    public static double getLat(){
+        return lat;
+    }
+    public static double getLon(){
+        return lon;
+    }
+
 
 }

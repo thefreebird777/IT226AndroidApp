@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 
 public class locationActivity extends AppCompatActivity {
-    NumberPicker numberPicker;
+    static NumberPicker numberPicker;
     Button button;
 
     @Override
@@ -43,5 +43,9 @@ public class locationActivity extends AppCompatActivity {
         });
 
     }
+    public static int getNum(){
+        return numberPicker.getValue();
+    }
+
 
 }
