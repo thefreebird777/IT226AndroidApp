@@ -9,12 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
 
-import java.util.Date;
-import java.util.TimeZone;
 
 public class clockActivity extends AppCompatActivity {
     static TimePicker timePicker;
-    Logic logic;
     Button button;
 
 
