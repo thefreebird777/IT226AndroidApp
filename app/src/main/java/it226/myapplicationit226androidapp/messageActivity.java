@@ -39,17 +39,19 @@ public class messageActivity extends AppCompatActivity {
 
                 //creates unique id per intent
                 int id= (int)System.currentTimeMillis();
+                Intent temp = getIntent();
+                receiverFlag=temp.getStringExtra("Activity");
                 pending_intent = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                receiverFlag=editText.getText().toString();
-                if(receiverFlag.equals("0")){
+                //receiverFlag=editText.getText().toString();
+                if(receiverFlag.equals("Timer")){
                     int minuteMil=timerActivity.getMinute()*60*1000;
                     int hourMil=timerActivity.getHour()*60*1000*60;
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+hourMil+minuteMil,pending_intent);
                 }
-                else if(receiverFlag.equals("1")){
+                else if(receiverFlag.equals("Location")){
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
                 }
-                else if(receiverFlag.equals("2")){
+                else if(receiverFlag.equals("Alarm Clock")){
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
                 }
 
