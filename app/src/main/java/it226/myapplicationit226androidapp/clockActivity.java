@@ -1,5 +1,6 @@
 package it226.myapplicationit226androidapp;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class clockActivity extends AppCompatActivity {
-    TimePicker timePicker;
+    static TimePicker timePicker;
     Logic logic;
     Button button;
 
@@ -40,5 +41,13 @@ public class clockActivity extends AppCompatActivity {
                 startActivity(new Intent("time_zoneActivity"));
             }
         });
+    }
+    @TargetApi(Build.VERSION_CODES.M)
+    public static int getMinute(){
+        return timePicker.getMinute();
+    }
+    @TargetApi(Build.VERSION_CODES.M)
+    public static int getHour(){
+        return timePicker.getHour();
     }
 }

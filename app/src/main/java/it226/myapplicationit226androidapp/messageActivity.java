@@ -6,9 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.Calendar;
 
 public class messageActivity extends AppCompatActivity {
     static EditText editText;
@@ -18,6 +21,7 @@ public class messageActivity extends AppCompatActivity {
     PendingIntent pending_intent;
     AlarmManager alarm_manager;
     Context context;
+    Boolean recursiveBool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +54,59 @@ public class messageActivity extends AppCompatActivity {
                 else if(receiverFlag.equals("Location")){
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
                 }
-                else if(receiverFlag.equals("Alarm Clock")){
-                    alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
+                else if(receiverFlag.equals("Alarm Clock")) {
+                    recursiveBool = recursiveActivity.getRecursive();
+                    if (recursiveBool) {
+                        Calendar calendar = Calendar.getInstance();
+                        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+                        int mon = dateActivity.getMonth();
+                        int day = dateActivity.getDay();
+                        int currentMon = calendar.get(Calendar.MONTH);
+                        if (currentDay + (currentMon * 30) > day + ((mon - 1) * 30)) {
+                            alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),30* 24 * 60 * 1000 * 60, pending_intent);
+                        } else {
+                            int currentHr = calendar.get(Calendar.HOUR_OF_DAY);
+                            int currentMin = calendar.get(Calendar.MINUTE);
+                            int minute = clockActivity.getMinute();
+                            int hour = clockActivity.getHour();
+                            if ((currentHr * 60) + currentMin > (hour * 60) + minute) {
+                                alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),30* 24 * 60 * 1000 * 60, pending_intent);
+                            } else {
+                                int minuteMil = minute * 60 * 1000;
+                                int hourMil = hour * 60 * 1000 * 60;
+                                int daysLeft = day + (mon * 30) - currentDay + (currentMon * 30);
+                                int dayMil = (daysLeft) * 24 * 60 * 1000 * 60;
+                                int delay = minuteMil + hourMil + dayMil;
+                                alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+delay,30* 24 * 60 * 1000 * 60, pending_intent);
+                            }
+                        }
+                    }
+                    else {
+                        Calendar calendar = Calendar.getInstance();
+                        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+                        int mon = dateActivity.getMonth();
+                        int day = dateActivity.getDay();
+                        int currentMon = calendar.get(Calendar.MONTH);
+                        if (currentDay + (currentMon * 30) > day + ((mon - 1) * 30)) {
+                            alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pending_intent);
+                        } else {
+                            int currentHr = calendar.get(Calendar.HOUR_OF_DAY);
+                            int currentMin = calendar.get(Calendar.MINUTE);
+                            int minute = clockActivity.getMinute();
+                            int hour = clockActivity.getHour();
+                            if ((currentHr * 60) + currentMin > (hour * 60) + minute) {
+                                alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pending_intent);
+                            } else {
+                                int minuteMil = minute * 60 * 1000;
+                                int hourMil = hour * 60 * 1000 * 60;
+                                int daysLeft = day + (mon * 30) - currentDay + (currentMon * 30);
+                                int dayMil = (daysLeft) * 24 * 60 * 1000 * 60;
+                                int delay = minuteMil + hourMil + dayMil;
+                                alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + delay, pending_intent);
+                            }
+                        }
+                    }
                 }
-
                 Intent intent = new Intent(messageActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

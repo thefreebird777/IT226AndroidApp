@@ -9,7 +9,7 @@ import android.widget.Button;
 public class recursiveActivity extends AppCompatActivity {
     Button button1;
     Button button2;
-
+    static Boolean recursiveBool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,7 @@ public class recursiveActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //set alarm to be recursive
+                recursiveBool=true;
                 startActivity(new Intent("dateActivity"));
             }
         });
@@ -30,11 +31,13 @@ public class recursiveActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                recursiveBool=false;
                 startActivity(new Intent("dateActivity"));
             }
         });
 
     }
-
+    public static boolean getRecursive(){
+        return recursiveBool;
+    }
 }

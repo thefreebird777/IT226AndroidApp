@@ -9,7 +9,7 @@ import android.widget.DatePicker;
 
 public class dateActivity extends AppCompatActivity {
 
-    DatePicker datePicker;
+    static DatePicker datePicker;
     Logic logic;
     Button button;
 
@@ -31,11 +31,15 @@ public class dateActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp=new Intent("messageActivity");
-                temp.putExtra("Activity","Alarm Clock");
-                startActivity(temp);
+                startActivity(new Intent("clockActivity"));
             }
         });
 
+    }
+    public static int getDay(){
+        return datePicker.getDayOfMonth();
+    }
+    public static int getMonth(){
+        return datePicker.getMonth();
     }
 }
