@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
 //        this.context=this;
 //        alarm_manager=(AlarmManager) getSystemService(ALARM_SERVICE);
 //        final Intent logic_intent = new Intent(this.context,Logic.class);

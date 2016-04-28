@@ -12,7 +12,7 @@ public class timerActivity extends AppCompatActivity {
     static NumberPicker numberPicker;
     static NumberPicker numberPicker2;
     Button button;
-    Logic logic = new Logic();
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

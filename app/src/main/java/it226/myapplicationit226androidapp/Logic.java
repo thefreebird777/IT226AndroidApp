@@ -13,5 +13,4 @@ public class Logic extends BroadcastReceiver {
         context.startActivity(newIntent);
 
     }
-
 }

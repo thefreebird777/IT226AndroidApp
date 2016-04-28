@@ -16,7 +16,7 @@ import java.util.Calendar;
 public class messageActivity extends AppCompatActivity {
     static EditText editText;
     Button button;
-    Logic logic = new Logic();
+    //Logic logic = new Logic();
     String receiverFlag;
     PendingIntent pending_intent;
     AlarmManager alarm_manager;
