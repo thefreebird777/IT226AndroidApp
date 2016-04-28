@@ -80,21 +80,21 @@ public class messageActivity extends AppCompatActivity {
                         int mon = dateActivity.getMonth();
                         int day = dateActivity.getDay();
                         int currentMon = calendar.get(Calendar.MONTH);
-                        if (currentDay + (currentMon * 30) > day + ((mon - 1) * 30)) {
+                        if (currentDay + (currentMon * 30) > day + ((mon) * 30)) {
                             alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),30* 24 * 60 * 1000 * 60, pending_intent);
                         } else {
                             int currentHr = calendar.get(Calendar.HOUR_OF_DAY);
                             int currentMin = calendar.get(Calendar.MINUTE);
                             int minute = clockActivity.getMinute();
                             int hour = clockActivity.getHour();
-                            if ((currentHr * 60) + currentMin > (hour * 60) + minute) {
+                            if ((currentHr * 60) + currentMin >= (hour * 60) + minute) {
                                 alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),30* 24 * 60 * 1000 * 60, pending_intent);
                             } else {
                                 int minuteMil = minute * 60 * 1000;
                                 int hourMil = hour * 60 * 1000 * 60;
-                                int daysLeft = day + (mon * 30) - currentDay + (currentMon * 30);
-                                int dayMil = (daysLeft) * 24 * 60 * 1000 * 60;
-                                int delay = minuteMil + hourMil + dayMil;
+                                int daysLeft = day + (mon * 30) - (currentDay + (currentMon * 30));
+                                long dayMil = (long) (daysLeft) * 24 * 60 * 1000 * 60;
+                                long delay = (long) (minuteMil + hourMil + dayMil);
                                 alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+delay,30* 24 * 60 * 1000 * 60, pending_intent);
                             }
                         }
@@ -105,21 +105,21 @@ public class messageActivity extends AppCompatActivity {
                         int mon = dateActivity.getMonth();
                         int day = dateActivity.getDay();
                         int currentMon = calendar.get(Calendar.MONTH);
-                        if (currentDay + (currentMon * 30) > day + ((mon - 1) * 30)) {
+                        if (currentDay + (currentMon * 30) > day + ((mon) * 30)) {
                             alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pending_intent);
                         } else {
                             int currentHr = calendar.get(Calendar.HOUR_OF_DAY);
                             int currentMin = calendar.get(Calendar.MINUTE);
                             int minute = clockActivity.getMinute();
                             int hour = clockActivity.getHour();
-                            if ((currentHr * 60) + currentMin > (hour * 60) + minute) {
+                            if ((currentHr * 60) + currentMin >= (hour * 60) + minute) {
                                 alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pending_intent);
                             } else {
                                 int minuteMil = minute * 60 * 1000;
                                 int hourMil = hour * 60 * 1000 * 60;
-                                int daysLeft = day + (mon * 30) - currentDay + (currentMon * 30);
-                                int dayMil = (daysLeft) * 24 * 60 * 1000 * 60;
-                                int delay = minuteMil + hourMil + dayMil;
+                                int daysLeft = day + (mon * 30) - (currentDay + (currentMon * 30));
+                                long dayMil = (long) (daysLeft) * 24 * 60 * 1000 * 60;
+                                long delay = (long) (minuteMil + hourMil + dayMil);
                                 alarm_manager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + delay, pending_intent);
                             }
                         }
@@ -160,4 +160,3 @@ public class messageActivity extends AppCompatActivity {
 
 
 }
-
