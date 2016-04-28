@@ -29,16 +29,10 @@ public class AndroidLocationActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-
-
+        setContentView(R.layout.activity_gps);
 
         appLocationService = new AppLocationService(
                 AndroidLocationActivity.this);
-
-
 
         btnGPSShowLocation = (Button) findViewById(R.id.btnGPSShowLocation);
 
