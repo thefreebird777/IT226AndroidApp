@@ -42,7 +42,6 @@ public class messageActivity extends AppCompatActivity {
                 Intent temp = getIntent();
                 receiverFlag=temp.getStringExtra("Activity");
                 pending_intent = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                //receiverFlag=editText.getText().toString();
                 if(receiverFlag.equals("Timer")){
                     int minuteMil=timerActivity.getMinute()*60*1000;
                     int hourMil=timerActivity.getHour()*60*1000*60;
@@ -55,7 +54,6 @@ public class messageActivity extends AppCompatActivity {
                     alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
                 }
 
-                logic.message(editText.getText().toString());
                 Intent intent = new Intent(messageActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

@@ -24,14 +24,16 @@ public class dateActivity extends AppCompatActivity {
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logic.date(datePicker.getDayOfMonth(), datePicker.getMonth());
+
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("clockActivity"));
+                Intent temp=new Intent("messageActivity");
+                temp.putExtra("Activity","Alarm Clock");
+                startActivity(temp);
             }
         });
 

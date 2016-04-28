@@ -30,7 +30,6 @@ public class clockActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    logic.time(timePicker.getHour(), timePicker.getMinute());
                 }
             }
         });
