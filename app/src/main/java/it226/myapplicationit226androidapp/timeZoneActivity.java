@@ -67,7 +67,7 @@ public class timeZoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 listView.getId();
-                id=timezone.getDisplayName();
+                //id=timezone.getDisplayName();
                 Intent temp=new Intent("messageActivity");
                 temp.putExtra("Activity", "Alarm Clock");
                 startActivity(temp);

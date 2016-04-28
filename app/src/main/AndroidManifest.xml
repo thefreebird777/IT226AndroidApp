@@ -128,9 +128,21 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="AndroidLocationActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <intent-filter>
+            <action android:name="transparent" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        <activity
+            android:name=".Displayer"
+            android:label="@string/title_activity_displayer"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

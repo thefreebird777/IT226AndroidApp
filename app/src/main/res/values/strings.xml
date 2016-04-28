@@ -27,4 +27,7 @@
     <string name="title_activity_time_zone">timeZoneActivity</string>
     <string name="title_activity_gps">gpsActivity</string>
     <string name="nextgps">Next</string>
+    <string name="title_activity_transparent">Transparent</string>
+    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="title_activity_displayer">Displayer</string>
 </resources>

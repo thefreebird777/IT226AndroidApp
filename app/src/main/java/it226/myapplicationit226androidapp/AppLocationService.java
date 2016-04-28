@@ -40,6 +40,11 @@ public class AppLocationService extends Service implements LocationListener {
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
+//                    ActivityCompat.requestPermissions(,INITIAL_PERMS,);
+//                    ActivityCompat.requestPermissions(,CAMERA_PERMS,);
+//                    ActivityCompat.requestPermissions(,CONTACTS_PERMS,);
+//                    ActivityCompat.requestPermissions(,LOCATION_PERMS,);
+
                     return null;
                 }
                 location = locationManager.getLastKnownLocation(provider);
@@ -50,6 +55,20 @@ public class AppLocationService extends Service implements LocationListener {
 
 
     }
+
+    private static final String[] INITIAL_PERMS={
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.READ_CONTACTS
+    };
+    private static final String[] CAMERA_PERMS={
+            Manifest.permission.CAMERA
+    };
+    private static final String[] CONTACTS_PERMS={
+            Manifest.permission.READ_CONTACTS
+    };
+    private static final String[] LOCATION_PERMS={
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
 
 
     @Override
