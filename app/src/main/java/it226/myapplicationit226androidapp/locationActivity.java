@@ -12,7 +12,6 @@ import android.widget.NumberPicker;
 public class locationActivity extends AppCompatActivity {
     NumberPicker numberPicker;
     Button button;
-    Logic logic = new Logic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
