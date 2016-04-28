@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
 
+import java.util.Date;
+import java.util.TimeZone;
+
 public class clockActivity extends AppCompatActivity {
     TimePicker timePicker;
     Logic logic;
@@ -35,9 +38,7 @@ public class clockActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp=new Intent("messageActivity");
-                temp.putExtra("Activity","Alarm Clock");
-                startActivity(temp);
+                startActivity(new Intent("time_zoneActivity"));
             }
         });
     }

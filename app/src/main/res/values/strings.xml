@@ -24,4 +24,5 @@
     <string name="next4">Next</string>
     <string name="title_activity_recursive">recursiveActivity</string>
     <string name="do_you_want_the_alarm_to_be_recursive">Do you want the alarm to be recursive?</string>
+    <string name="title_activity_time_zone">timeZoneActivity</string>
 </resources>

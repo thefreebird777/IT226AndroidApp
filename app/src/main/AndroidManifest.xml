@@ -102,6 +102,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".timeZoneActivity"
+            android:label="@string/title_activity_time_zone"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="time_zoneActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
