@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     PendingIntent pending_intent;
     AlarmManager alarm_manager;
     Context context;
@@ -49,20 +49,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    private void button1Click(){
-        startActivity(new Intent("recursiveActivity"));
-    }
-    private void button2Click(){
+    private void button1Click() {startActivity(new Intent("recursiveActivity"));}
+
+    private void button2Click() {
         startActivity(new Intent("timerActivity"));
     }
-    private void button3Click(){
-        startActivity(new Intent("locationActivity"));
-    }
+
+    private void button3Click() {startActivity(new Intent("AndroidLocationActivity"));}
 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.button1:
                 button1Click();
                 break;
