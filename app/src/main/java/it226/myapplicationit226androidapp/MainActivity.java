@@ -1,5 +1,8 @@
 package it226.myapplicationit226androidapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+    PendingIntent pending_intent;
+    AlarmManager alarm_manager;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        this.context=this;
+//        alarm_manager=(AlarmManager) getSystemService(ALARM_SERVICE);
+//        final Intent logic_intent = new Intent(this.context,Logic.class);
+//        pending_intent= PendingIntent.getBroadcast(MainActivity.this,0,logic_intent,PendingIntent.FLAG_UPDATE_CURRENT);
+//        alarm_manager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),pending_intent);
+//
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -64,3 +75,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+

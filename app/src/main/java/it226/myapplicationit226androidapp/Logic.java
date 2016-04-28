@@ -1,9 +1,12 @@
 package it226.myapplicationit226androidapp;
 
-/**
- * Created by Ian on 4/24/2016.
- */
-public class Logic {
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
+public class Logic extends BroadcastReceiver {
+    String str="";
     public void date(int day, int month){
 
     }
@@ -13,7 +16,7 @@ public class Logic {
     }
 
     public void message(String message){
-
+        this.str=message;
     }
 
     public void timer(int hours, int minutes){
@@ -22,5 +25,11 @@ public class Logic {
 
     public void locationTime(int minutes){
 
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.e("test",messageActivity.getMes());
+        //Log.e("ERROR: ", "RECEIVER FLAG NOT WORKING");
     }
 }

@@ -9,8 +9,8 @@ import android.widget.NumberPicker;
 
 
 public class timerActivity extends AppCompatActivity {
-    NumberPicker numberPicker;
-    NumberPicker numberPicker2;
+    static NumberPicker numberPicker;
+    static NumberPicker numberPicker2;
     Button button;
     Logic logic = new Logic();
 
@@ -49,6 +49,11 @@ public class timerActivity extends AppCompatActivity {
             }
         });
     }
-
+    public static int getMinute(){
+        return numberPicker2.getValue();
+    }
+    public static int getHour(){
+        return numberPicker.getValue();
+    }
 }
 
