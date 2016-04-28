@@ -1,11 +1,14 @@
 package it226.myapplicationit226androidapp;
 
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,10 +41,11 @@ public class messageActivity extends AppCompatActivity {
         alarm_manager=(AlarmManager) getSystemService(ALARM_SERVICE);
 
         final Intent logic_intent = new Intent(this.context,Logic.class);
-
+        final Intent location_intent = new Intent(this.context,Logic.class);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 //SET RECEIVER FLAG TO AUTO GENERATE
                 gps= new GPSTracker(messageActivity.this);
@@ -57,10 +61,9 @@ public class messageActivity extends AppCompatActivity {
                 //creates unique id per intent
                 int id= (int)System.currentTimeMillis();
                 Intent temp = getIntent();
-
                 receiverFlag=temp.getStringExtra("Activity");
                 pending_intent = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                pending_intent2 = PendingIntent.getBroadcast(messageActivity.this, id,logic_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                pending_intent2 = PendingIntent.getBroadcast(messageActivity.this, id,location_intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 if(receiverFlag.equals("Timer")){
                     int minuteMil=timerActivity.getMinute()*60*1000;
                     int hourMil=timerActivity.getHour()*60*1000*60;
@@ -130,6 +133,20 @@ public class messageActivity extends AppCompatActivity {
 
         });
     }
+    public void showNotification() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(android.R.drawable.ic_popup_reminder);
+        builder.setContentTitle(messageActivity.getMes());
+        builder.setContentText("Lat: " + getLat()+"\n Long: "+getLon());
+        Intent intent = new Intent(this, SecondClass.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(SecondClass.class);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(pendingIntent);
+        NotificationManager NM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NM.notify(0, builder.build());
+    }
     public static String getMes(){
         return editText.getText().toString();
     }
@@ -143,3 +160,4 @@ public class messageActivity extends AppCompatActivity {
 
 
 }
+
