@@ -38,7 +38,7 @@ public class locationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logic.locationTime(numberPicker.getValue());
-                Intent temp=new Intent("cp3.tutorials.messageActivity");
+                Intent temp=new Intent("messageActivity");
                 temp.putExtra("Activity","Location");
                 startActivity(temp);
             }

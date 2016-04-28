@@ -31,7 +31,7 @@ public class dateActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent("cp3.tutorials.clockActivity"));
+                startActivity(new Intent("clockActivity"));
             }
         });
 

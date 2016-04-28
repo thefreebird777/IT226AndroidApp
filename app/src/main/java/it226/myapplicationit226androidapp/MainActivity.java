@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void button1Click(){
-        startActivity(new Intent("cp3.tutorials.dateActivity"));
+        startActivity(new Intent("recursiveActivity"));
     }
     private void button2Click(){
-        startActivity(new Intent("cp3.tutorials.timerActivity"));
+        startActivity(new Intent("timerActivity"));
     }
     private void button3Click(){
-        startActivity(new Intent("cp3.tutorials.locationActivity"));
+        startActivity(new Intent("locationActivity"));
     }
 
 

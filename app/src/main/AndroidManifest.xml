@@ -11,12 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <receiver android:name=".Logic" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +32,8 @@
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
 
             <intent-filter>
-                <action android:name="cp3.tutorials.dateActivity" />
+                <action android:name="dateActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -44,7 +47,7 @@
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
 
             <intent-filter>
-                <action android:name="cp3.tutorials.clockActivity" />
+                <action android:name="clockActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -59,12 +62,11 @@
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
 
             <intent-filter>
-                <action android:name="cp3.tutorials.timerActivity" />
+                <action android:name="timerActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".messageActivity"
             android:label="@string/title_activity_message"
@@ -75,7 +77,7 @@
                 android:value="it226.myapplicationit226androidapp.MainActivity" />
 
             <intent-filter>
-                <action android:name="cp3.tutorials.messageActivity" />
+                <action android:name="messageActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -85,7 +87,18 @@
             android:label="@string/title_activity_location"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="cp3.tutorials.locationActivity" />
+                <action android:name="locationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".recursiveActivity"
+            android:label="@string/title_activity_recursive"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="recursiveActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

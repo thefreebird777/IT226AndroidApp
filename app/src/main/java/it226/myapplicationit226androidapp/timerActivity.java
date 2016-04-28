@@ -45,7 +45,7 @@ public class timerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logic.timer(numberPicker.getValue(),numberPicker2.getValue());
-                Intent temp=new Intent("cp3.tutorials.messageActivity");
+                Intent temp=new Intent("messageActivity");
                 temp.putExtra("Activity","Timer");
                 startActivity(temp);
             }

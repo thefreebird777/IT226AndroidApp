@@ -35,7 +35,7 @@ public class clockActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp=new Intent("cp3.tutorials.messageActivity");
+                Intent temp=new Intent("messageActivity");
                 temp.putExtra("Activity","Alarm Clock");
                 startActivity(temp);
             }
