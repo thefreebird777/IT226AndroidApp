@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -17,8 +18,8 @@ public class timeZoneActivity extends AppCompatActivity {
 
     ListView listView;
     Button button;
-
-    TimeZone timezone = new TimeZone() {
+    static String id;
+    static TimeZone timezone = new TimeZone() {
         @Override
         public int getOffset(int era, int year, int month, int day, int dayOfWeek, int timeOfDayMillis) {
             return 0;
@@ -66,12 +67,16 @@ public class timeZoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 listView.getId();
+                id=timezone.getDisplayName();
                 Intent temp=new Intent("messageActivity");
                 temp.putExtra("Activity", "Alarm Clock");
                 startActivity(temp);
             }
         });
 
+    }
+    public static int timeDifference(){
+        return  TimeZone.getTimeZone(id).getOffset(Calendar.getInstance().getTimeInMillis());
     }
 
 }
